@@ -31,29 +31,24 @@ Output:
   "confidence": 4,
   "concepts": [
     {
-      "concept": "Cancer nanotheranostics",
-      "mesh_identifier": "D000068877",
+      "concept": "Theranostics",
+      "concept_description": "A combination of therapeutic and diagnostic capabilities within a single agent or platform.",
       "cancer-related": true
     },
     {
       "concept": "Carbon dots (C-dots)",
-      "mesh_identifier": "D000066448",
-      "cancer-related": false
+      "concept_description": "Small carbon nanoparticles with unique optical properties.",
+      "cancer-related": true
     },
     {
       "concept": "Photodynamic therapy",
-      "mesh_identifier": "D017145",
+      "concept_description": "A treatment using a photosensitizing agent and a specific wavelength of light to produce singlet oxygen that can kill cancer cells.",
       "cancer-related": true
     },
     {
       "concept": "Photothermal therapy",
-      "mesh_identifier": "D000069447",
+      "concept_description": "A treatment that uses light-absorbing agents to generate heat and destroy cancer cells.",
       "cancer-related": true
-    },
-    {
-      "concept": "Bioimaging",
-      "mesh_identifier": "D000067297",
-      "cancer-related": false
     }
   ],
   "pmid": 26696330

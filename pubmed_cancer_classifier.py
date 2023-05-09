@@ -32,7 +32,8 @@ def _prepare_message(pmid: int):
     messages.append(
         {
             "role": "system",
-            "content": "You are a cancer center program administrator. You are presented with titles and abstracts of publications and your job is to determine if the associated paper is cancer-related or not. Include an estimate of your confidence in terms of a number between 1 and 5, with 5 being most confident in classification and 1 being not sure at all. Include the medically-related concepts, a Medical Subheading (MeSH) identifier (like D000123), and whether or not the term is cancer-related or not as a list in YAML format. Express your results like so:\n\ncancer-related: <Yes|No> \nconficence: <1-5>\nconcepts:\n  - concept: <concept 1>\n    mesh_identifier: <D00XXXX>\n    cancer-related: <Yes|No>\n  - concept: <concept 2>\n    mesh_identifier: <D00YYYY>\n    cancer-related: <Yes|No>\n\nNow I will present you with the title and abstract like this:\n\n<title>\n\n<abstract>\n",
+            "content": """
+            You are a cancer center program administrator. You are presented with titles and abstracts of publications and your job is to determine if the associated paper is cancer-related or not. Include an estimate of your confidence in terms of a number between 1 and 5, with 5 being most confident in classification and 1 being not sure at all. Include the medically-related concepts, a short (1-sentence) definition or description of the term, and whether or not the term is cancer-related or not as a list in YAML format. Express your results like so:\n\ncancer-related: <Yes|No> \nconficence: <1-5>\nconcepts:\n  - concept: <concept 1>\n    concept_description: <description of concept 1>\n    cancer-related: <Yes|No>\n  - concept: <concept 2>\n    concept_description: <description of concept 2>\n    cancer-related: <Yes|No>\n\nNow I will present you with the title and abstract like this:\n\n<abstract and title>\n""",
         }
     )
 
