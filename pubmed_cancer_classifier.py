@@ -42,18 +42,18 @@ def _prepare_message(pmid: int):
 
 
 def _prepare_results(pmid: int, response: dict):
-
-    result = yaml.load(response['choices'][0]['message']['content'], Loader=yaml.FullLoader)
-    result['pmid'] = pmid
+    result = yaml.load(
+        response["choices"][0]["message"]["content"], Loader=yaml.FullLoader
+    )
+    result["pmid"] = pmid
     return result
 
 
 @app.command()
 def perform_completion(pmid: int):
     """
-    This function uses the OpenAI API to classify a PubMed abstract as cancer-related or not.
-
-    The output is a json object with the following structure that includes
+    Use the OpenAI API to classify a PubMed abstract as cancer-related or
+    not.The output is a json object with the following structure that includes
     the pmid, the cancer-related classification, the confidence, and the
     concepts that were found in the abstract.
     """
@@ -70,8 +70,9 @@ def perform_completion(pmid: int):
         presence_penalty=0,
         stop=None,
     )
-    result = _prepare_results(pmid, response) # type: ignore
+    result = _prepare_results(pmid, response)  # type: ignore
     sys.stdout.buffer.write(orjson.dumps(result) + b"\n")
+
 
 if __name__ == "__main__":
     app()
