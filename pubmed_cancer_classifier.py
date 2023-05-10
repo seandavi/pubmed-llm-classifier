@@ -1,7 +1,6 @@
 # Note: The openai-python library support for Azure OpenAI is in preview.
 import os
 import sys
-import typer
 import openai
 import yaml
 import orjson
@@ -10,10 +9,6 @@ openai.api_type = "azure"
 openai.api_base = "https://southcentralus.api.cognitive.microsoft.com/"
 openai.api_version = "2023-03-15-preview"
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
-# establish a typer app
-app = typer.Typer()
-
 
 # use the httpx library to make a request to the PubMed API
 # to get the abstract for a given PMID
@@ -50,7 +45,6 @@ def _prepare_results(pmid: int, response: dict):
     return result
 
 
-@app.command()
 def perform_completion(pmid: int):
     """
     Use the OpenAI API to classify a PubMed abstract as cancer-related or
@@ -75,5 +69,3 @@ def perform_completion(pmid: int):
     sys.stdout.buffer.write(orjson.dumps(result) + b"\n")
 
 
-if __name__ == "__main__":
-    app()
