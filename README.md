@@ -1,5 +1,6 @@
-# gpt-examples
-gpt-examples
+# pubmed llm classifier
+
+Given a pubmed, classify as "XXX"-related and supply list of concepts.
 
 ## pubmed classifier
 
