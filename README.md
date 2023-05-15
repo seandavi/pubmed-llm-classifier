@@ -2,6 +2,12 @@
 
 Given a pubmed, classify as "XXX"-related and supply list of concepts.
 
+## Why?
+
+Many programs/departments/divisions/centers need to have a quick way of categorizing
+or classifying research outputs and grants as "XXX-related." GPT can do this out-of-the-box.
+Admin folks at the Cancer Center want to use this. 
+
 ## pubmed classifier
 
 The pubmed abstract associated with this pubmed ID is:
